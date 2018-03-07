@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = 'MMScrollBanner'
   s.summary      = 'A ScrollBanner for iOS.'
-  s.version      = '0.0.1'
+  s.version      = '0.0.2'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.authors      = { 'MMMille' => 'xuemingluan@gmail.com' }
   #s.social_media_url = 'http://blog.MMMille.com'

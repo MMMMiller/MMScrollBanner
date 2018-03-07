@@ -10,6 +10,7 @@
 #import "MMScrollBannerCell.h"
 #import "MMScrollBannerPageControl.h"
 #import <MMWeakTimer/MMWeakTimer.h>
+#import <YYKit/YYKit.h>
 
 //bannar滚动视图
 #define kMMAutoScrollTimeInterval 3
@@ -125,11 +126,43 @@
 
 - (MMScrollBannerPageControl *)pageControl{
     if (!_pageControl) {
-        _pageControl = [[MMScrollBannerPageControl alloc] init];//WithFrame:CGRectMake(0 , self.frame.size.height - 22, self.frame.size.width, 12)
-//                                                        highLightImage:[UIImage imageNamed:@"bm_icon_homepage_dot"]
-//                                                          defaultImage:[UIImage imageNamed:@"bm_icon_homepage_dot_no"]];
+        _pageControl = [[MMScrollBannerPageControl alloc] initWithFrame:CGRectMake(0 , self.frame.size.width - 22, self.frame.size.width, 12)
+                                                        highLightImage:[self convertViewToImage:self.currentPageIndicatorView]
+                                                          defaultImage:[self convertViewToImage:self.pageIndicatorView]];
     }
     return _pageControl;
+}
+
+- (UIImage *)convertViewToImage:(UIView *)view{
+    CGSize size = view.bounds.size;
+    // 下面方法，第一个参数表示区域大小。第二个参数表示是否是非透明的。
+    //如果需要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage*image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
+- (UIView *)currentPageIndicatorView{
+    if (_currentPageIndicatorView == nil) {
+        _currentPageIndicatorView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 12, 12)];
+        _currentPageIndicatorView.backgroundColor = [UIColor colorWithHexString:@"0xe75988"];
+        _currentPageIndicatorView.layer.cornerRadius  =6;
+    }
+    return _currentPageIndicatorView;
+}
+
+- (UIView *)pageIndicatorView{
+    if (_pageIndicatorView == nil) {
+        _pageIndicatorView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,12, 12)];
+        _pageIndicatorView.backgroundColor = [UIColor whiteColor];
+        _pageIndicatorView.layer.cornerRadius = 6;
+        _pageIndicatorView.layer.borderColor = [UIColor colorWithWhite:0.0 alpha:0.08].CGColor;
+        _pageIndicatorView.layer.borderWidth = 0.5;
+    }
+    return _pageIndicatorView;
+    
 }
 
 - (void)refreshViewWithDataSource:(NSArray *)dataSource {
