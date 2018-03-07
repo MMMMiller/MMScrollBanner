@@ -1,0 +1,17 @@
+PODS:
+  - MMWeakTimer (0.0.1)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - MMWeakTimer
+  - YYKit
+
+SPEC CHECKSUMS:
+  MMWeakTimer: 11f6b0153820399181845a3c14101471c79a2ed1
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 9d5b607f855768c3c6d7d8d7a989f787bf41791b
+
+COCOAPODS: 1.4.0
