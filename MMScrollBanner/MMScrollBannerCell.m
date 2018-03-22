@@ -28,7 +28,7 @@
     return self;
 }
 
-- (void)setLycollectionViewCellWithImage:(NSString *)imageName
+- (void)setCollectionViewCellWithImage:(NSString *)imageName
                         placeholderImage:(NSString *)placeholderImage
                         isNeedNetworking:(BOOL)isNeedNetworking{
     

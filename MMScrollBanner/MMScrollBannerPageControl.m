@@ -7,8 +7,8 @@
 //
 
 #import "MMScrollBannerPageControl.h"
-#define kBTDotWidth 6//圆点直径
-#define kBTDotMargin 4//圆点间距
+#define kMMDotWidth 6//圆点直径
+#define kMMDotMargin 4//圆点间距
 
 
 @implementation MMScrollBannerPageControl
@@ -37,7 +37,7 @@
     for (int i=0; i<[self.subviews count]; i++) {
         UIView *dot = [self.subviews objectAtIndex:i];
         if ([dot.subviews count] == 0) {
-            UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(dot.bounds.origin.x, dot.bounds.origin.y, kBTDotWidth, kBTDotWidth)];
+            UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(dot.bounds.origin.x, dot.bounds.origin.y, kMMDotWidth, kMMDotWidth)];
             [dot addSubview:view];
         };
         UIImageView *view = dot.subviews[0];
@@ -66,7 +66,7 @@
 - (void)layoutSubviews{
     [super layoutSubviews];
     //计算圆点间距
-    CGFloat marginX = kBTDotWidth + kBTDotMargin;
+    CGFloat marginX = kMMDotWidth + kMMDotMargin;
     //计算整个pageControll的宽度
     CGFloat newW = (self.subviews.count - 1 ) * marginX;
     //设置新frame
@@ -78,7 +78,7 @@
     //遍历subview,设置圆点frame
     for (int i=0; i<[self.subviews count]; i++) {
         UIImageView* dot = [self.subviews objectAtIndex:i];
-        [dot setFrame:CGRectMake(i * marginX, dot.frame.origin.y, kBTDotWidth, kBTDotWidth)];
+        [dot setFrame:CGRectMake(i * marginX, dot.frame.origin.y, kMMDotWidth, kMMDotWidth)];
     }
 }
 

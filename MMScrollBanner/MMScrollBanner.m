@@ -283,7 +283,7 @@
                                 dequeueReusableCellWithReuseIdentifier:kMMScrollBannerCellId
                                 forIndexPath:indexPath];
     cell.imageUrlArray = self.originalArr;
-    [cell setLycollectionViewCellWithImage:_imagesArray[indexPath.row]
+    [cell setCollectionViewCellWithImage:_imagesArray[indexPath.row]
                           placeholderImage:self.placeholderImageName isNeedNetworking:self.isNetworkding];
     
     return cell;

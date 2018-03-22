@@ -15,7 +15,7 @@ static NSString *kMMScrollBannerCellId = @"kMMScrollBannerCellId";
 //传递整个图片数组是为了大图浏览时可以浏览所有图片
 @property (nonatomic, copy) NSArray *imageUrlArray;
 
-- (void)setLycollectionViewCellWithImage:(NSString *)imageName
+- (void)setCollectionViewCellWithImage:(NSString *)imageName
                         placeholderImage:(NSString *)placeholderImage
                         isNeedNetworking:(BOOL)isNeedNetworking;
 

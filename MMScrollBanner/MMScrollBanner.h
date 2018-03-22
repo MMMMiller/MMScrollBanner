@@ -25,10 +25,10 @@
 
 - (void)refreshViewWithDataSource:(NSArray *)dataSource;
 
-@property(nonatomic ,assign)BOOL       isCancelAutoNextPage;//取消自动轮播，当page只有1的时候自动取消
-@property(nonatomic ,assign)BOOL       isCancelPageControl;//取消pagecontrol，当page只有1的时候自动取消
-@property(nonatomic ,assign)BOOL       isCancelInfiniteBanner;//取消无限轮播，当page只有1的时候自动取消
-@property(nonatomic ,assign)BOOL       isPause;//是否暂停计时
+@property(nonatomic ,assign)BOOL isCancelAutoNextPage;//取消自动轮播，当page只有1的时候自动取消
+@property(nonatomic ,assign)BOOL isCancelPageControl;//取消pagecontrol，当page只有1的时候自动取消
+@property(nonatomic ,assign)BOOL isCancelInfiniteBanner;//取消无限轮播，当page只有1的时候自动取消
+@property(nonatomic ,assign)BOOL isPause;//是否暂停计时
 @property (nonatomic, weak)id <MMScrollBannerDelegate> delegate;
 
 @end
